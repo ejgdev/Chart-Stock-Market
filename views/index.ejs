@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<% include ./partials/head %>
+	</head>
+	<body id="page-top">
+		<!-- Navigation -->
+		<% include ./partials/header %>
+		<!-- End Navigation -->
+
+		<header class="header-nightsky">
+			<div class="container text-center">
+				<div>
+					<div class="col-md-12 text-center">
+							<p> See which bars are hoppin' tonight and RSVP ahead of time!</p>
+					</div>
+				</div><!-- close row -->
+				<form class="form-horizontal" role="form" method="POST" action="/">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
+							</div>
+						</div>
+					</div>
+				</div><!-- close row -->
+				</form>
+        </div>
+			</div>
+		</header>
+		<section>
+
+
+
+
+
+
+
+
+
+
+			<div class="row">
+			        <div class="col-lg-6 col-sm-12" id="line-chart" ng-controller="LineCtrl">
+
+			      <div class="row">
+			        <div class="col-lg-6 col-sm-12 code">
+			          <tabset>
+			            <tab heading="Markup">
+			              <pre><code data-language="html">&lt;canvas id=&quot;bar&quot; class=&quot;chart chart-bar&quot;
+			  chart-data=&quot;data&quot; chart-labels=&quot;labels&quot;&gt; chart-series=&quot;series&quot;
+			&lt;/canvas&gt;</code></pre>
+			            </tab>
+			            <tab heading="Javascript">
+			              <pre><code data-language="javascript">angular.module("app", ["chart.js"]).controller("BarCtrl", function ($scope) {
+			  $scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+			  $scope.series = ['Series A', 'Series B'];
+
+			  $scope.data = [
+			    [65, 59, 80, 81, 56, 55, 40],
+			    [28, 48, 40, 19, 86, 27, 90]
+			  ];
+			});
+			              </code></pre>
+			            </tab>
+			          </tabset>
+			        </div>
+ </div>
+ </div>
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</section>
+
+		<!-- The Poll's List -->
+		  <% include ./partials/body-partial %>
+		<!-- Footer -->
+		<footer>
+			<% include ./partials/footer %>
+		</footer>
+		<!-- End Footer -->
+</body>
+</html>

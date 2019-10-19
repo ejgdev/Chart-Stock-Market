@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+html, body {
+  height:100%;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  align-items:center;
+  background: #D0B8AC;
+}
+
+header {
+  padding: 150px 0 100px;
+}
+section {
+  padding: 20px 0;
+}
+footer{
+  padding-top: 60px;
+}
+nav{
+  height: 100px;
+}
+nav a {
+  margin-left: .8rem;
+  margin-right: .8rem;
+}
+span.tab-space {
+  padding-left:2em;
+}
+
+.header-nightsky {
+    color: white;
+    background: url("/views/img/nightsky.jpg") no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    padding-bottom: 50px;
+}
+.navbar-brand
+{
+  font-size: 30px;
+  margin: 0px;
+  margin-left: 2rem;
+}
+.footer-info{
+  height: 60px;
+  display:flex;
+  align-items:center;
+}
