@@ -1,104 +1,96 @@
-# Clementine.js FCC Boilerplate
+# Chart Stock Market  with NodeJS.
 
-[![Join the chat at https://gitter.im/johnstonbl01/clementinejs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/johnstonbl01/clementinejs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Is made with NodeJS, MongoDB and EJS templates.
 
-## Overview
+This Project is part of the Freecodecamp course.
 
-Clementine.js is a lightweight boilerplate for fullstack JavaScript development which utilizes MongoDB, Express and Node.js. The boilerplate errs on the side of transparency and simplicity, making it an ideal starting point for beginner and seasoned developers alike. 
+## Getting Started
 
-The [Free Code Camp](http://www.freecodecamp.com) version of Clementine.js is meant for use when completing projects as part of the FCC curriculum. This version includes GitHub authentication using [Passport](http://passportjs.org/).
+Click in the download button and get the .zip file. Extract the contents of the zip file.
 
-## Versions
+Or can clone this repository, just copy the git url and open your terminal and run git clone + repository url:
 
-There are 3 versions of Clementine.js:
-
-- [**Standard**](https://github.com/johnstonbl01/clementinejs): the simplest version of Clementine.js. Intended for those who wish for the smallest and least intrusive footprint OR to implement features on their own.
-- [**Angular**](https://github.com/johnstonbl01/clementinejs-angular): a slightly more complex version of the same application. This version employs the use of AngularJS as the front-end framework.
-- **Free Code Camp (FCC)** (this version): A modified version of the standard boilerplate that is intended for use with the [Free Code Camp](http://freecodecamp.com/) curriculum.
-
-# Quick Start Guide
+```
+git clone https://github.com/ejgdev/Chart-Stock-Market.git
+```
 
 ### Prerequisites
 
-In order to use Clementine.js, you must have the following installed:
+It is necessary to have installed a package manager like npm or yarn.
 
-- [Node.js](https://nodejs.org/)
-- [NPM](https://nodejs.org/)
-- [MongoDB](http://www.mongodb.org/)
-- [Git](https://git-scm.com/)
+- [NodeJS website](https://nodejs.org/).
+- [Yarn website](https://yarnpkg.com/).
 
-### Installation & Startup
+### Enviroment Keys configuration
+#### Github OAuth Token keywords:
+You need login in your Github account and enter this [link](https://github.com/settings/developers). Then create `New OAuth App`:
 
-To install Clementine.js, simply enter the below in the terminal window:
+If you want run this Project in local, you can use this configuration:
+- Application name: Any name you want.
+- Homepage URL: http://localhost:8080/
+- Authorization callback URL: http://localhost:8080/auth/github/callback
 
-```bash
-$ git clone https://github.com/johnstonbl01/clementinejs-fcc.git your-project
-```
+Then you can copy the **Client ID** as your `GITHUB_KEY` and your **Client Secret** as yor `GITHUB_SECRET` in your `.env file`.
 
-To install the dependencies, enter the following in your terminal:
+#### MongoDB configuration
+You Need an account in [mlab](https://mlab.com/), then create a database with two collections: `polls` and `users` like the App's models.
 
-```
-$ cd your-project
-$ npm install
-```
+Then in your `.env file` copy the MongoDB URI:
+- `mongodb://<dbuser>:<dbpassword>@ds<deploymentnumber>.mlab.com:<id>/mydb`
 
-This will install the Clementine.js components into the `your-project` directory.
+Note: In your mLab database website shows your URI link.
 
-### Setup GitHub Authentication
+#### App  configuration
+Only left two more configuration.
+- one of them is the `PORT`, you can use your own port or by default is `8080`.
+- The last one is the `APP_URL`, you can use your own url website or `http://localhost:8080/`.
 
-Please follow [this guide](http://www.clementinejs.com/tutorials/tutorial-passport.html#GitHubAppSetup) to register the application with GitHub and get API keys / secrets.
+You can see the `.env.example` file for references.
 
-### Local Environment Variables
+### Installing
 
-Create a file named `.env` in the root directory. This file should contain:
-
-```
-GITHUB_KEY=your-client-id-here
-GITHUB_SECRET=your-client-secret-here
-MONGO_URI=mongodb://localhost:27017/clementinejs
-PORT=8080
-APP_URL=http://localhost:8080/
-```
-
-### Starting the App
-
-To start the app, make sure you're in the project directory and type `node server.js` into the terminal. This will start the Node server and connect to MongoDB.
-
-You should the following messages within the terminal window:
+For install this repository, just need to run this command:
 
 ```
-Node.js listening on port 8080...
+npm install
 ```
 
-Next, open your browser and enter `http://localhost:8080/`. Congrats, you're up and running!
+### Start the Project
+When everything is setup, you can run the project with this command:
 
-### c9.io Setup
+```
+npm run start:dev
+```
+Then open http://localhost:8080/ to see your app. By default run on port 8080.
 
-If you're using c9.io, please [reference the documentation](http://www.clementinejs.com/versions/fcc.html#c9.ioSetup) for instructions to get Clementine.js working in the c9 environment.
+## Deployment
 
-## Contributing
+There are differents way to Deployment.
 
-This is an open-source project, and contributions are always welcome! To see ways to contribute, please review the [contribution guidelines](http://www.clementinejs.com/developers/contributing.html).
+If you want use Heroku, you can follow this [article](https://devcenter.heroku.com/articles/git).
 
-## Documentation
+When your heroku app is created, just need deploy with this command:
 
-Complete documentation can be [found here](http://www.clementinejs.com).
+```
+git push heroku master
+```
+## Freecodecamp Information
 
-### Tutorial
+### Objective:
+Build a full stack JavaScript app that is functionally similar to **[this page](http://watchstocks.herokuapp.com/)** and deploy it to Heroku.
 
-You can find a complete step-by-step tutorial on how to create this app from the ground up [here](http://www.clementinejs.com/tutorials/tutorial-passport.html).
+Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit [This Page](https://freecodecamp.org/challenges/get-set-for-our-dynamic-web-application-projects).
 
-## Features
+Here are the specific user stories you should implement for this project:
 
-| Features           | Standard  | Angular   | FCC       |
-|:---------          |:--------: |:--------: |:---------:|
-| MongoDB            | _Yes_     | _Yes_     | _Yes_     |
-| Express            | _Yes_     | _Yes_     | _Yes_     |
-| AngularJS (1.x)    | _No_      | _Yes_     | _No_      |
-| Node.js            | _Yes_     | _Yes_     | _Yes_     |
-| Passport           | _No_      | _No_      | _Yes_     |
-| Mongoose           | _No_      | _No_      | _Yes_     |
+### User Story:
+>1. I can view a graph displaying the recent trend lines for each added stock.
 
-## License
+>2. I can add new stocks by their symbol name.
 
-MIT License. [Click here for more information.](LICENSE.md)
+>3. I can remove stocks.
+
+>4. I can see changes in real-time when any other user adds or removes a stock. For this you will need to use Web Sockets.
+
+### Links
+[GitHub](https://github.com/ejgdev/Voting-App)
